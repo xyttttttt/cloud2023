@@ -1,0 +1,80 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name:  cloud-config-center #注册进Eureka服务器的微服务名
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xyttttttt/springcloud-config.git #GitHub上面的git仓库名字
+          ####搜索目录
+          search-paths:
+            - springcloud-config
+              ####读取分支
+          default-label: main
+#          force-pull: true
+#          username: xyttttttt
+#          skip-ssl-validation: true
+#          password: b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+#            NhAAAAAwEAAQAAAYEAs/V03qJl0HGS8+yypgbw9WBatlvQrtzs1+P93EYY4aC56YWvhdcn
+#            aWJI+yOl4w2xS07EpCPatcso0mnxnNp1jwh43zg/iGwRzqW0GhznxqFOzYRXQuLdt850sN
+#            +kHhxrxnCdPBnRHnWtT/g9oMvq7dNp95+eRm2gaE3GAZlmJnA2ZBtudwustsxceUbrwSvm
+#            gRVuqZXs2htHpifDBpL8A0qqCLGmZ2rQHrnNoWuBz/vJ/nHFIScaLlA65YEW+tk4MBe9v2
+#            IN55xunLfDrrDTh2K2iq5vLrtH1FhlLYk3ZUcqUT1ms7ogEfo3wh0aFaHRRGq8dU+B7oxs
+#            cqAZqZAOqiBpuD8gpf9xTLInPNxOe4lfh7pzYd9YlF1vdD5bnYcMRSMwQ1wdQnFxTkSYC8
+#            Rbwz7IwCZC2Sk3q7/3rMesW+24BAUCt3FlnyvuDEpD2kY+PUbGPjR79Bu8KT6gj6YaxPhb
+#            vLXUS5otHIQDooLBHz+UZr98w9fjwudZ06aXe7oTAAAFiNj/qIbY/6iGAAAAB3NzaC1yc2
+#            EAAAGBALP1dN6iZdBxkvPssqYG8PVgWrZb0K7c7Nfj/dxGGOGguemFr4XXJ2liSPsjpeMN
+#            sUtOxKQj2rXLKNJp8ZzadY8IeN84P4hsEc6ltBoc58ahTs2EV0Li3bfOdLDfpB4ca8ZwnT
+#            wZ0R51rU/4PaDL6u3TafefnkZtoGhNxgGZZiZwNmQbbncLrLbMXHlG68Er5oEVbqmV7Nob
+#            R6YnwwaS/ANKqgixpmdq0B65zaFrgc/7yf5xxSEnGi5QOuWBFvrZODAXvb9iDeecbpy3w6
+#            6w04ditoquby67R9RYZS2JN2VHKlE9ZrO6IBH6N8IdGhWh0URqvHVPge6MbHKgGamQDqog
+#            abg/IKX/cUyyJzzcTnuJX4e6c2HfWJRdb3Q+W52HDEUjMENcHUJxcU5EmAvEW8M+yMAmQt
+#            kpN6u/96zHrFvtuAQFArdxZZ8r7gxKQ9pGPj1Gxj40e/QbvCk+oI+mGsT4W7y11EuaLRyE
+#            A6KCwR8/lGa/fMPX48LnWdOml3u6EwAAAAMBAAEAAAGBAIqPuy3VAuntGQZBwQg/HfcA+r
+#            egmFybdK2COawKOQw5MgyRR6WZFRp6d9EPEKJzn4hpnNT5WmRRihwBQOzR9GRuVIsjByAm
+#            fcuMINFeYkO5XjC17m5sueTVzVmGyRn6Li279gUZp795Qjnp3KHbgQcfml70guydaj4FbC
+#            k9EL8V9Xs89+AnmBOj5KvopIu3HqNTekKPUrBZAuD3ip2cPPjX23YYOxUz1A1kaOUaHvii
+#            WVRWCz/MmMcCNWcS7zu0VdmBV1fGLQTYl299YlwUStNi/s3NBwIDtqKUIDy2vyPFwGwci7
+#            +N2JUr3UYjbTLkQoWC4G3UZALmECtz7fzkH6cQlc7ThytxLS6s9nssyqfPgqaxXnu3JUte
+#            h1qDl3uOhGDvtPRw1pFKN9z4oV87636qbsLd5EeiqTVN9MWrg6cDqv9VcqGP+sfbVAHs7G
+#            Yzde0/1T623ouKViwJLj//PwhMhn/nYItflxICw+iEZD+xOc0fmumXcIPBE2ppXZi7GQAA
+#            AMEAsektGYdXpURWG92uPYPXMb+9rWSsESxRs7AHPwHhPegaF2EDS7Ub+aC3eFHuAwvWxp
+#            TquJ6z84I8otq1SZsjkBqLZ/17srXZbJVm7JogQoQqGskdS4vAiNaO8ybsFATELbr0E+OK
+#            gEpbTLW4P4XUfzYrbvX5zZni3hCJ3W51v7c+vxYg1b5i2bN18HLGh+eA8zXu298RRWSIU0
+#            q1ZQoWijjrlfocztZbzi069mhF4UjcwELhOkjWoS3x8iYAbRUpAAAAwQDXZ9SQngmks3Ly
+#            HfhZGtK+mtztaSTrDLehc+qlGJZZdC8yDi/v1I5FebQWQjIL6RkNm13xrY3mNP8RbGO9bR
+#            IS9tPoXUqIwCBrnRVO55/ejnDm3kv5hq4MZiqeHGJRKzEgTx4jzqx/jaKIHGVR3/bfylHa
+#            cdFMdvfAtrp17AOeBE0A53r//5ACkEZ/iNp7SiC4H4locjpV2XGFFfkqGdkugV6btGrkTK
+#            ez+HSMTd8qnYpImNRRwAIy3CD2nyJfwkcAAADBANXfgjX6KL4pNrfkveXn3sPPT9JOmGmB
+#            Es1rR72bgO9jpzI22Y82n63Y6bwDzMm+8T0B60rnnVCB/Hemh9vCfb5h4Nuw4TmJ+GhzTz
+#            k4hFw+uSpqUKCLWkkJ28zZVymOdjb+xIHaNBHUkSS/941//cRkVu3rkDrTK65ihbzpVwo6
+#            CBBhK+/TTKp7lQ5/ntEblCyXWSvXOP8ofEvL8b+7aWO26ZWuH1C/H6Q6Nxr+gk35oZ4i4i
+#            HfqLnyF/S7exXD1QAAABExNjA0ODk5MDkyQHFxLmNvbQ==
+      #          clone-on-start: true
+      #          private-key: C:/Users/86155/.ssh/id_rsa.pub
+
+
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+#服务注册到eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+
+
+##rabbitmq相关配置,暴露bus刷新配置的端点
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: "bus-refresh"

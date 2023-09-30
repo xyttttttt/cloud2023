@@ -1,0 +1,56 @@
+server:
+  port: 2001
+
+spring:
+  application:
+    name: seata-order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  datasource:
+    #    type: com.zaxxer.hikari.HikariDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 本地docker的mysql5.7库
+    url: jdbc:mysql://localhost:3306/seata_order?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&&serverTimezone=UTC
+    username: root
+    password: 123456
+
+
+# 开启feign服务调用
+feign:
+  hystrix:
+    enabled: false
+  sentinel:
+    enabled: true
+
+seata:
+  registry: # TC服务注册中心的配置，微服务根据这些信息去注册中心获取tc服务地址
+    # 参考tc服务自己的registry.conf中的配置
+    type: nacos
+    nacos: # tc
+      server-addr: 127.0.0.1:8848
+      namespace: a661b9c9-96b1-4619-8df3-a7eb6bb83819
+      group: SEATA_GROUP #配置文件所在组
+      username: nacos
+      password: nacos
+      cluster: default
+  tx-service-group: my_test_tx_group #seata默认的组别  最好就用这个
+
+
+
+# 日志
+logging:
+  level:
+    io:
+      seata: info
+
+
+
+# ORM框架
+mybatis:
+  # 包对应的xml文件
+  mapper-locations: classpath*:mapper/*.xml
+  # 所有entities所在包
+  type-aliases-package: com.xyt.springcloud.domain
